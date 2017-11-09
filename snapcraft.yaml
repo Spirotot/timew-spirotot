@@ -11,6 +11,7 @@ confinement: strict
 apps:
     timew:
         command: timew
+        aliases: [timew]
         plugs: [home]
 
 parts:
