@@ -1,0 +1,22 @@
+name: timew-spirotot
+summary: Timewarrior
+version: 1.0.0
+description: |
+    Timewarrior is Free and Open Source Software that tracks time from the
+    command line.
+
+grade: stable
+confinement: strict
+
+apps:
+    timew:
+        command: timew
+        plugs: [home]
+
+parts:
+    cmake-build:
+        source: https://taskwarrior.org/download/timew-1.0.0.tar.gz
+        source-checksum: sha1/00f76998a915a7a27fdac23e5a8b1283e53472b3
+        plugin: cmake
+        configflags: 
+            - -DCMAKE_BUILD_TYPE=release
